@@ -2,5 +2,13 @@
    requests
 ============= */
 #requests{
-
+    
+        display: grid;
+        grid-template-columns: 16px auto 16px;
+        grid-template-areas: ". requests ." ;
+    
+        >div{
+            grid-area: requests ;
+        }
+     
 }
