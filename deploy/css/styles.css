@@ -385,6 +385,11 @@ textarea {
   grid-template-columns: 16px auto 16px;
   grid-template-areas: ". about .";
 }
+@media (min-width: 768px) {
+  #about {
+    grid-template-columns: 12% auto 12%;
+  }
+}
 #about > div {
   grid-area: about;
 }
@@ -395,10 +400,18 @@ textarea {
 #parnters {
   display: grid;
   grid-template-columns: 16px auto 16px;
-  grid-template-areas: ". about .";
+  grid-template-areas: ". partners .";
 }
 #parnters > div {
   grid-area: partners;
+  border: 1px solid red;
+}
+#parnters > div ul {
+  margin: 0;
+  padding: 0;
+}
+#parnters > div ul li {
+  list-style: none;
 }
 
 /* =============

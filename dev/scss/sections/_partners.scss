@@ -4,9 +4,20 @@
    #parnters{
       display: grid;
       grid-template-columns: 16px auto 16px;
-      grid-template-areas: ". about ." ;
+      grid-template-areas: ". partners .";
   
+
+
       >div{
-          grid-area: partners ;
+          grid-area: partners;
+          border: 1px solid red;
+
+          ul{
+            margin: 0;
+            padding: 0;
+            li{
+               list-style: none;
+            }
+          }
       }
    }
