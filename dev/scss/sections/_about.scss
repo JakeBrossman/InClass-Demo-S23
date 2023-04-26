@@ -9,7 +9,9 @@
     @include md{
         grid-template-columns: 12% auto 12%;
     }
-
+@include xxl{
+    grid-template-columns: auto 1440px auto;
+}
     >div{
         grid-area: about ;
 
