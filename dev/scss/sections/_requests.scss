@@ -2,7 +2,7 @@
    requests
 ============= */
 #requests{
-    
+
         display: grid;
         grid-template-columns: 16px auto 16px;
         grid-template-areas: ". requests ." ;
@@ -16,9 +16,34 @@
         @include xxl{
             grid-template-columns: auto 1440px auto;
         }
-        >div{
-            grid-area: requests ;
+    
 
-        }
-     
+            >div{
+                grid-area: request;
+                
+                form{
+                    margin-top: 32px;
+                    @include md{
+                        margin-top: 24px;
+                    }
+
+                    @include lg{
+                        margin-top: 32px;
+                    }
+                    button{
+                        background-color: var(--purple);
+                        color: white;
+    
+                    }
+                }
+                h1{
+                    margin-bottom:16px ;
+        
+                    @include lg{
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+            
+        
 }
