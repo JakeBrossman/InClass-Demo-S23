@@ -613,7 +613,7 @@ footer > div #fm {
 @media (min-width: 1024px) {
   #requests > div form {
     margin-top: 32px;
-    grid-template-columns: 20%;
+    grid-template-columns: auto 20%;
   }
 }
 @media (min-width: 1200px) {
