@@ -19,14 +19,14 @@
     
 
             >div{
-                grid-area: request;
+                grid-area: requests;
                 
                 form{
                     display: grid;
                     margin-top: 32px;
                     @include md{
                         margin-top: 24px;
-                        grid-template-columns: auto 30%;
+                        grid-template-columns: auto 15%;
                     }
 
                     @include lg{
@@ -34,6 +34,10 @@
                         grid-template-columns: 20%;
                     }
                     @include xl{
+                        
+                        grid-template-columns: auto 20%;
+                    }
+                    @include xxl{
                         
                         grid-template-columns: auto 15%;
                     }

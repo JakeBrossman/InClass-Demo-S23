@@ -605,7 +605,7 @@
   "projectAttributes" : {
     "creationDate" : 702560800.42181301,
     "displayValue" : "InClass-Demo-S23",
-    "displayValueWasSetByUser" : 0,
+    "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets_gray",
     "iconImageWasSetByUser" : 0
   },

@@ -598,7 +598,7 @@ footer > div #fm {
   }
 }
 #requests > div {
-  grid-area: request;
+  grid-area: requests;
 }
 #requests > div form {
   display: grid;
@@ -607,7 +607,7 @@ footer > div #fm {
 @media (min-width: 768px) {
   #requests > div form {
     margin-top: 24px;
-    grid-template-columns: auto 30%;
+    grid-template-columns: auto 15%;
   }
 }
 @media (min-width: 1024px) {
@@ -617,6 +617,11 @@ footer > div #fm {
   }
 }
 @media (min-width: 1200px) {
+  #requests > div form {
+    grid-template-columns: auto 20%;
+  }
+}
+@media (min-width: 1440px) {
   #requests > div form {
     grid-template-columns: auto 15%;
   }
