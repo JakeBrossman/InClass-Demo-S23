@@ -339,6 +339,10 @@ template {
   grid-area: header-footer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .large-images {
   width: 100%;
 }
@@ -390,6 +394,18 @@ textarea {
 /* =============
     Navigation
 ============= */
+nav ul li a:link, nav ul li a:visited {
+  padding: 24px 36px;
+  border: 1px var(--gray);
+  color: var(--gray);
+  border-radius: 6px;
+  transition: 0.25s;
+}
+nav ul li a:link:hover, nav ul li a:linkactive, nav ul li a:visited:hover, nav ul li a:visitedactive {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
 /* =============
     Header
 ============= */
