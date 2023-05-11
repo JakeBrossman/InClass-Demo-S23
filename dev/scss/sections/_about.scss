@@ -14,8 +14,9 @@
 }
     >div{
         grid-area: about ;
+        
 
-        @include md{
+        @include lg{
             display: grid;
             grid-template-columns: 50% auto;
             // gap: 136px;
@@ -26,6 +27,19 @@
             @include md{
                 margin-bottom: 0;
             }
+            
+            #about-img-container{
+                border-radius: 100%;
+                border: 1px red;
+                overflow: hidden;
+                #about-bg-img{
+                    background-image: url("img/about/about-left.jpg");
+                    background-position: center bottom;
+                    width: 340px;
+                    height: 340px;
+                }
+            }
+            
         }
         section{
             padding-left: 136px;

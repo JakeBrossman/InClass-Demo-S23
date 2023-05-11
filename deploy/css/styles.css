@@ -511,7 +511,7 @@ footer > div #fm {
 #about > div {
   grid-area: about;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   #about > div {
     display: grid;
     grid-template-columns: 50% auto;
@@ -524,6 +524,17 @@ footer > div #fm {
   #about > div aside {
     margin-bottom: 0;
   }
+}
+#about > div aside #about-img-container {
+  border-radius: 100%;
+  border: 1px red;
+  overflow: hidden;
+}
+#about > div aside #about-img-container #about-bg-img {
+  background-image: url("img/about/about-left.jpg");
+  background-position: center bottom;
+  width: 340px;
+  height: 340px;
 }
 #about > div section {
   padding-left: 136px;
