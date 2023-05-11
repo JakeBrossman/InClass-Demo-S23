@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: 16px auto 16px;
     grid-template-areas: ". about ." ;
-    
+    text-align: center;
     @include md{
         grid-template-columns: 12% auto 12%;
     }
@@ -49,10 +49,16 @@
             }
             h1{
                 margin-bottom:16px ;
+                font-weight: 500;
+                line-height: 133.5%;
+                margin-bottom: -3px;
     
                 @include lg{
                     margin-bottom: 24px;
                 }
+            }
+            p{
+
             }
         }
         

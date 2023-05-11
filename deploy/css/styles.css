@@ -365,6 +365,10 @@ ul li {
 /* =============
     Typography
 ============= */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 h1, h2, h3, h4, h5, p {
   margin: 0;
   padding: 0;
@@ -497,6 +501,7 @@ footer > div #fm {
   display: grid;
   grid-template-columns: 16px auto 16px;
   grid-template-areas: ". about .";
+  text-align: center;
 }
 @media (min-width: 768px) {
   #about {
@@ -547,13 +552,15 @@ footer > div #fm {
 }
 #about > div section h1 {
   margin-bottom: 16px;
+  font-weight: 500;
+  line-height: 133.5%;
+  margin-bottom: -3px;
 }
 @media (min-width: 1024px) {
   #about > div section h1 {
     margin-bottom: 24px;
   }
 }
-
 /* =============
    partners
 ============= */
