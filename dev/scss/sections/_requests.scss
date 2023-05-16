@@ -1,82 +1,101 @@
 /* =============
-   requests
+    Requests
 ============= */
+
 #requests{
-
-        display: grid;
-        grid-template-columns: 16px auto 16px;
-        grid-template-areas: ". requests ." ;
+    // this is the offset magic
+    scroll-margin-top: 90px;
+    //
     
-        @include md{
-            grid-template-columns: 12% auto 12%;
-        }
-        @include xl{
-            grid-template-columns: 20% auto 20%;
-        }
-        @include xxl{
-            grid-template-columns: auto 1440px auto;
-        }
-    
+    display: grid;
+    grid-template-columns: 16px auto 16px;
+    grid-template-areas: ". request .";
+    text-align: center;
 
-            >div{
-                grid-area: requests;
-                
-                form{
-                    display: grid;
-                    margin-top: 32px;
-                    @include md{
-                        margin-top: 24px;
-                        grid-template-columns: auto 15%;
-                    }
+    @include md{
+        grid-template-columns: 12% auto 12%;
+    }
 
-                    @include lg{
-                        margin-top: 32px;
-                        grid-template-columns: auto 20%;
-                    }
-                    @include xl{
-                        
-                        grid-template-columns: auto 20%;
-                    }
-                    @include xxl{
-                        
-                        grid-template-columns: auto 15%;
-                    }
-                    input{
-                        border: none;
-                        border: 1px solid var(--gray);
-                        padding: 15px 0 15px 8px ;
-                        @include md{
-                            border-radius: 6px 0px 0px 6px;
-                           // box-sizing: border-box;
-                           // width: 70%;
-                        }
-                    }
-                    button{
-                        background-color: var(--purple);
-                        color: white;
-                        border: none;
-                        padding: 16px 24px;
-                        margin-left: auto;
-                        margin-top: 16px;
-                        border-radius: 6px;
-                        @include md{
-                            margin-left: initial;
-                            padding: 0px 24px;
-                            height: 100%;
-                            margin-top: 0;
-                            border-radius: 0px 6px 6px 0px;
-                        }
-    
-                    }
-                }
-                h1{
-                    margin-bottom:16px ;
-        
-                    @include lg{
-                        margin-bottom: 24px;
-                    }
+    @include lg{
+        scroll-margin-top: 110px;
+    }
+
+    @include xl{
+        grid-template-columns: 20% auto 20%;
+    }
+
+    @include xxl{
+        grid-template-columns: auto 700px auto;
+    }
+
+
+    >div{
+        grid-area: request;
+
+        h1{
+            margin-bottom: 16px;
+
+            @include lg{
+                margin-bottom: 24px;
+            }
+        }
+
+        p{
+            font-size: rem-calc(24);
+        }
+
+        form{
+            margin-top: 32px;
+            display: grid;
+            
+            @include md{
+                margin-top: 24px;
+                grid-template-columns: auto 30%;
+            }
+
+            @include lg{
+                margin-top: 32px;
+                grid-template-columns: auto 20%;
+                box-sizing: border-box;
+            }
+
+            @include xl{
+                grid-template-columns: auto 23%;
+            }
+
+            @include xxl{
+                // grid-template-columns: auto 15%;
+            }
+
+
+            input{
+                border: none;
+                border: 1px solid var(--gray);
+                padding: 15px 0 15px 8px;
+                @include md{
+                    border-radius: 6px 0px 0px 6px;
                 }
             }
-            
-        
+
+
+            button{
+                // background-color: #5B61A2;
+                background-color: var(--purple);
+                color: white;
+                border: none;
+                padding: 16px 24px;
+                margin-left: auto;
+                margin-top: 16px;
+                border-radius: 6px;
+
+                @include md{
+                    margin-left: initial;
+                    padding: 0px 24px;
+                    height: 100%;
+                    margin-top: 0;
+                    border-radius: 0px 6px 6px 0px;
+                }
+            }
+        }
+    }
 }

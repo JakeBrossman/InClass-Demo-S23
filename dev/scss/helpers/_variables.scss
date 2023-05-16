@@ -1,5 +1,5 @@
 /* =============
-    Variables
+    SCSS Variables
 ============= */
 
 // Define the breakpoints
@@ -12,24 +12,25 @@ $screen-md-min: 768px;
 // Large tablets and small desktops
 $screen-lg-min: 1024px;
 
-// xLarge desktops
+// Extra Large desktops
 $screen-xl-min: 1200px;
 
-
-// xxLarge desktops
+// Extra Extra Large desktops
 $screen-xxl-min: 1440px;
 
-// Colors vars
+
+/* =============
+    CSS Variables
+============= */
 :root {
+  // colors vars
   --black: #000000;
   --white: #ffffff;
   --purple: #5B61A2;
   --gray: #AEB3B7;
 
-
   // grid sizes
- --grid-margin-mobile: 16px;
+  --grid-margin-mobile: 16px;
+
 }
-
-
 

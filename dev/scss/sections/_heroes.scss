@@ -1,39 +1,39 @@
 /* =============
-   hereos
+    Heroes
 ============= */
-#hero{ 
-img{
-   line-height: 0;
-   display: block;
-
-}
-}
-
-
-
-
-/*---------- hero 2 ---------------*/
-
-#hero2{
-   background-image: url("../img/heroes/hero-2.jpg");
-   background-size: cover;
-   height: 80vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-@include md{
-   height: 75vh;
-   background-position: left bottom;
-   
-}
-@include md{
-   height: 70vh;
-   
-}
-i{
-   color: var(--white);
-   font-size: rem-calc(60);
+#hero{
+    img{
+        line-height: 0;
+        display: block;
+    }
 }
 
+
+
+/* ------ Hero 2 -----*/
+#hero-2{
+    background-image: url("../img/heroes/hero-2.jpg");
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include md{
+        height: 60vh;
+        background-position: left bottom;
+    }
+
+    @include xl{
+        height: 70vh;
+    }
+
+    i{
+        color: var(--white);
+        font-size: rem-calc(60);
+
+        @include lg{
+            font-size: rem-calc(120);
+        }
+    }
 }

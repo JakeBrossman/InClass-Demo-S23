@@ -8,7 +8,10 @@ html {
 
 /* ---------------- Media Queries ---------------- */
 /* =============
-    Variables
+    SCSS Variables
+============= */
+/* =============
+    CSS Variables
 ============= */
 :root {
   --black: #000000;
@@ -330,36 +333,31 @@ template {
 /* =============
     Base
 ============= */
-.header-footer-grid {
-  display: grid;
-  grid-template-columns: 16px auto 16px;
-  grid-template-areas: ". header-footer  .";
+ul {
+  padding: 0;
+  margin: 0;
 }
-.header-footer-grid > div {
-  grid-area: header-footer;
+ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 a {
   text-decoration: none;
 }
 
-.large-images {
-  width: 100%;
-}
-
-ul li {
-  list-style: none;
-  padding: none;
-  margin: none;
-}
-
 .content-spacing {
-  padding-top: 32px;
+  margin-top: 32px;
 }
 @media (min-width: 768px) {
   .content-spacing {
-    padding-top: 64px;
+    margin-top: 64px;
   }
+}
+
+.large-images {
+  width: 100%;
 }
 
 /* =============
@@ -367,6 +365,21 @@ ul li {
 ============= */
 body {
   font-family: "Poppins", sans-serif;
+}
+
+.main-titles {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .main-titles {
+    font-size: 2.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .main-titles {
+    font-size: 3.5rem;
+  }
 }
 
 h1, h2, h3, h4, h5, p {
@@ -403,16 +416,58 @@ textarea {
 /* =============
     Navigation
 ============= */
+html {
+  scroll-behavior: smooth;
+}
+
+.show-menu {
+  display: block !important;
+}
+
 nav {
   display: none;
+}
+@media (min-width: 1024px) {
+  nav {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 nav ul li {
   text-align: right;
 }
+@media (min-width: 1024px) {
+  nav ul li {
+    margin-left: 16px;
+  }
+}
 nav ul li a:link, nav ul li a:visited {
+  font-family: "Roboto", sans-serif;
   display: inline-block;
   color: black;
   padding: 16px 0 16px;
+  font-weight: 500;
+}
+@media (min-width: 1024px) {
+  nav ul li a:link, nav ul li a:visited {
+    padding: 24px 36px;
+    border: 1px solid var(--gray);
+    color: var(--gray);
+    border-radius: 6px;
+    transition: 0.25s;
+  }
+}
+@media (min-width: 1024px) {
+  nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
+    background-color: var(--gray);
+    color: var(--white);
+  }
 }
 
 /* =============
@@ -421,13 +476,18 @@ nav ul li a:link, nav ul li a:visited {
 header {
   display: grid;
   grid-template-columns: 50% auto;
-  grid-template-areas: " logo burger" " nav nav";
+  grid-template-areas: "logo burger" "nav nav";
   padding: 16px;
   position: fixed;
   width: 100%;
-  background-color: aliceblue;
+  background-color: white;
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(42, 48, 54, 0.3);
+}
+@media (min-width: 1024px) {
+  header {
+    grid-template-areas: "logo nav";
+  }
 }
 header #logo {
   grid-area: logo;
@@ -439,6 +499,11 @@ header #burger-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+@media (min-width: 1024px) {
+  header #burger-container {
+    display: none;
+  }
 }
 header #burger-container button {
   border: none;
@@ -455,6 +520,8 @@ header nav {
 ============= */
 footer {
   padding: 0 16px;
+  padding-bottom: 32px;
+  font-size: 0.75rem;
 }
 footer > div {
   display: grid;
@@ -469,59 +536,87 @@ footer > div {
 }
 footer > div #fl {
   grid-area: fl;
+  text-align: right;
 }
 footer > div #fc {
   grid-area: fc;
+  text-align: right;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  footer > div #fc {
+    margin-bottom: 0;
+  }
 }
 footer > div #fm {
   grid-area: fm;
+  text-align: right;
+}
+@media (min-width: 768px) {
+  footer > div #fm {
+    text-align: center;
+  }
+}
+footer > div #fm span {
+  color: var(--purple);
 }
 
 /* =============
-   hereos
+    Heroes
 ============= */
 #hero img {
   line-height: 0;
   display: block;
 }
 
-/*---------- hero 2 ---------------*/
-#hero2 {
+/* ------ Hero 2 -----*/
+#hero-2 {
   background-image: url("../img/heroes/hero-2.jpg");
   background-size: cover;
-  height: 80vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (min-width: 768px) {
-  #hero2 {
-    height: 75vh;
+  #hero-2 {
+    height: 60vh;
     background-position: left bottom;
   }
 }
-@media (min-width: 768px) {
-  #hero2 {
+@media (min-width: 1200px) {
+  #hero-2 {
     height: 70vh;
   }
 }
-#hero2 i {
+#hero-2 i {
   color: var(--white);
   font-size: 3.75rem;
 }
+@media (min-width: 1024px) {
+  #hero-2 i {
+    font-size: 7.5rem;
+  }
+}
 
 /* =============
-   about
+    About
 ============= */
 #about {
+  scroll-margin-top: 90px;
   display: grid;
-  grid-template-columns: 16px auto 16px;
+  grid-template-columns: var(--grid-margin-mobile) auto var(--grid-margin-mobile);
   grid-template-areas: ". about .";
   text-align: center;
 }
 @media (min-width: 768px) {
   #about {
     grid-template-columns: 12% auto 12%;
+  }
+}
+@media (min-width: 1024px) {
+  #about {
+    scroll-margin-top: 110px;
   }
 }
 @media (min-width: 1440px) {
@@ -546,44 +641,63 @@ footer > div #fm {
     margin-bottom: 0;
   }
 }
-#about > div aside #about-img-container {
-  border-radius: 100%;
-  border: 1px red;
-  overflow: hidden;
-}
-#about > div aside #about-img-container #about-bg-img {
-  background-image: url("img/about/about-left.jpg");
+#about > div aside #about-bg-img {
+  background-image: url("../img/about/about-left.jpg");
   background-position: center bottom;
-  width: 340px;
-  height: 340px;
-}
-#about > div section {
-  padding-left: 136px;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 100%;
 }
 @media (min-width: 768px) {
-  #about > div section {
+  #about > div #about-info {
     display: flex;
     align-items: center;
+    margin-top: 24px;
   }
 }
-#about > div section h1 {
+#about > div #about-info h1 {
   margin-bottom: 16px;
   font-weight: 500;
   line-height: 133.5%;
   margin-bottom: -3px;
+  font-size: 1.5rem;
 }
-@media (min-width: 1024px) {
-  #about > div section h1 {
-    margin-bottom: 24px;
+@media (min-width: 768px) {
+  #about > div #about-info h1 {
+    font-size: 2.75rem;
   }
 }
+#about > div #about-info p {
+  line-height: 133.5%;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  #about > div #about-info p {
+    margin-top: 15px;
+    padding: 0 10%;
+  }
+}
+@media (min-width: 768px) {
+  #about > div #about-info p {
+    font-size: 1.75rem;
+  }
+}
+
 /* =============
-   partners
+    Partners
 ============= */
 #partners {
+  scroll-margin-top: 90px;
   display: grid;
   grid-template-columns: 16px auto 16px;
   grid-template-areas: ". partners .";
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  #partners {
+    scroll-margin-top: 110px;
+  }
 }
 @media (min-width: 1440px) {
   #partners {
@@ -593,9 +707,22 @@ footer > div #fm {
 #partners > div {
   grid-area: partners;
 }
+#partners > div h2 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  #partners > div h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  #partners > div h2 {
+    font-size: 2rem;
+  }
+}
 #partners > div ul {
   margin-top: 24px;
-  padding: 0;
   display: grid;
   grid-template-rows: repeat(6, 220px);
   gap: 24px;
@@ -603,8 +730,8 @@ footer > div #fm {
 @media (min-width: 768px) {
   #partners > div ul {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 32px;
     grid-template-rows: repeat(3, 220px);
+    margin-top: 32px;
   }
 }
 @media (min-width: 1200px) {
@@ -616,11 +743,11 @@ footer > div #fm {
 }
 #partners > div ul li {
   list-style: none;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  text-align: center;
   border: 1px solid var(--gray);
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 1200px) {
   #partners > div ul #p1 {
@@ -654,16 +781,23 @@ footer > div #fm {
 }
 
 /* =============
-   requests
+    Requests
 ============= */
 #requests {
+  scroll-margin-top: 90px;
   display: grid;
   grid-template-columns: 16px auto 16px;
-  grid-template-areas: ". requests .";
+  grid-template-areas: ". request .";
+  text-align: center;
 }
 @media (min-width: 768px) {
   #requests {
     grid-template-columns: 12% auto 12%;
+  }
+}
+@media (min-width: 1024px) {
+  #requests {
+    scroll-margin-top: 110px;
   }
 }
 @media (min-width: 1200px) {
@@ -673,36 +807,43 @@ footer > div #fm {
 }
 @media (min-width: 1440px) {
   #requests {
-    grid-template-columns: auto 1440px auto;
+    grid-template-columns: auto 700px auto;
   }
 }
 #requests > div {
-  grid-area: requests;
+  grid-area: request;
+}
+#requests > div h1 {
+  margin-bottom: 16px;
+}
+@media (min-width: 1024px) {
+  #requests > div h1 {
+    margin-bottom: 24px;
+  }
+}
+#requests > div p {
+  font-size: 1.5rem;
 }
 #requests > div form {
-  display: grid;
   margin-top: 32px;
+  display: grid;
 }
 @media (min-width: 768px) {
   #requests > div form {
     margin-top: 24px;
-    grid-template-columns: auto 15%;
+    grid-template-columns: auto 30%;
   }
 }
 @media (min-width: 1024px) {
   #requests > div form {
     margin-top: 32px;
     grid-template-columns: auto 20%;
+    box-sizing: border-box;
   }
 }
 @media (min-width: 1200px) {
   #requests > div form {
-    grid-template-columns: auto 20%;
-  }
-}
-@media (min-width: 1440px) {
-  #requests > div form {
-    grid-template-columns: auto 15%;
+    grid-template-columns: auto 23%;
   }
 }
 #requests > div form input {
@@ -731,13 +872,5 @@ footer > div #fm {
     height: 100%;
     margin-top: 0;
     border-radius: 0px 6px 6px 0px;
-  }
-}
-#requests > div h1 {
-  margin-bottom: 16px;
-}
-@media (min-width: 1024px) {
-  #requests > div h1 {
-    margin-bottom: 24px;
   }
 }

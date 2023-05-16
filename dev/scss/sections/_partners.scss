@@ -1,86 +1,107 @@
 /* =============
-   partners
+    Partners
 ============= */
-#partners {
-  display: grid;
-  grid-template-columns: 16px auto 16px;
-  grid-template-areas: ". partners .";
 
-  @include xxl{
-   grid-template-columns: auto 1440px auto;
-}
+#partners{
+    // this is the offset magic
+    scroll-margin-top: 90px;
+    //
+    
+    display: grid;
+    grid-template-columns: 16px auto 16px;
+    grid-template-areas: ". partners .";
+    text-align: center;
 
-  > div {
-    grid-area: partners;
-
-    ul {
-      margin-top: 24px;
-      padding: 0;
-      display: grid;
-      grid-template-rows: repeat( 6,220px);
-      gap: 24px;
-
-      @include md {
-        grid-template-columns: repeat(2, 1fr);
-        margin-top: 32px;
-        grid-template-rows: repeat( 3,220px);
-      }
-      
-      @include xl {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat( 2,220px);
-       grid-template-areas: 
-       "p1 p1 p1 p2 p2 p3"
-       "p4 p5 p5 p5 p6 p6";
-      }
-
-      li {
-        list-style: none;
-
-        
-        padding-top: 100px;
-        padding-bottom: 100px;
-        text-align: center;
-        border: 1px solid var(--gray);
-        border-radius: 4px;
-      }
-     
-      #p1 {
-         @include xl{
-            grid-area: p1;
-         }
-        
-      }
-      
-      #p2 {
-         @include xl{
-            grid-area: p2;
-         }
-      }
-      
-      #p3 {
-         @include xl{
-            grid-area: p3;
-         }
-      }
-      
-      #p4 {
-         @include xl{
-            grid-area: p4;
-         }
-      }
-      
-      #p5 {
-         @include xl{
-            grid-area: p5;
-         }
-      }
-      
-      #p6 {
-         @include xl{
-            grid-area: p6;
-         }
-      }
+    @include lg{
+        scroll-margin-top: 110px;
     }
-  }
+
+    @include xxl{
+        grid-template-columns: auto 1440px auto;
+    }
+
+    >div{
+        grid-area: partners;
+
+        h2{
+            font-weight: 400;
+            font-size: rem-calc(16);
+
+            @include md{
+                font-size: rem-calc(24);
+            }
+
+            @include lg{
+                font-size: rem-calc(32);
+            }
+        }
+        
+
+        ul{
+            margin-top: 24px;
+            display: grid;
+            grid-template-rows: repeat(6, 220px);
+            gap: 24px;
+
+            @include md{
+                grid-template-columns: repeat(2, 1fr);
+                // grid-template-columns: 50% 50%;
+                // grid-template-columns: 50% auto;
+                grid-template-rows: repeat(3, 220px);
+                margin-top: 32px;
+            }
+            
+            @include xl {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(2, 220px);
+                grid-template-areas: 
+                "p1 p1 p1 p2 p2 p3"
+                "p4 p5 p5 p5 p6 p6";
+            }
+
+            li{
+                list-style: none;
+                border: 1px solid var(--gray);
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #p1{
+                @include xl{
+                    grid-area: p1;
+                }
+            }
+
+            #p2{
+                @include xl{
+                    grid-area: p2;
+                }
+            }
+
+            #p3{
+                @include xl{
+                    grid-area: p3;
+                }
+            }
+            #p4{
+                @include xl{
+                    grid-area: p4;
+                }
+            }
+
+            #p5{
+                @include xl{
+                    grid-area: p5;
+                }
+            }
+
+            #p6{
+                @include xl{
+                    grid-area: p6;
+                }
+            }
+        }
+    }
 }

@@ -1,66 +1,91 @@
 /* =============
-   about
+    About
 ============= */
+
 #about{
+
+    // this is the offset magic
+    scroll-margin-top: 90px;
+    //
+
     display: grid;
-    grid-template-columns: 16px auto 16px;
-    grid-template-areas: ". about ." ;
+    grid-template-columns: var(--grid-margin-mobile) auto var(--grid-margin-mobile);
+    grid-template-areas: ". about .";
     text-align: center;
+
     @include md{
         grid-template-columns: 12% auto 12%;
     }
-@include xxl{
-    grid-template-columns: auto 1440px auto;
-}
-    >div{
-        grid-area: about ;
-        
+
+    @include lg{
+        scroll-margin-top: 110px;
+    }
+
+    @include xxl{
+        grid-template-columns: auto 1440px auto;
+    }
+
+    >div {
+        grid-area: about;
+
 
         @include lg{
             display: grid;
             grid-template-columns: 50% auto;
-            // gap: 136px;
         }
+
         aside{
             margin-bottom: 24px;
 
-            @include md{
+            @include md {
                 margin-bottom: 0;
             }
-            
-            #about-img-container{
-                border-radius: 100%;
-                border: 1px red;
-                overflow: hidden;
-                #about-bg-img{
-                    background-image: url("img/about/about-left.jpg");
+
+            #about-bg-img{
+                    background-image: url("../img/about/about-left.jpg");
                     background-position: center bottom;
-                    width: 340px;
-                    height: 340px;
-                }
+                    background-size: cover;
+                    width: 100%;
+                    padding-bottom: 100%;
+                    border-radius: 100%;
             }
             
         }
-        section{
-            padding-left: 136px;
+
+        #about-info{
             @include md{
                 display: flex;
                 align-items: center;
+                margin-top: 24px;
+                // padding-left: 136px;
             }
+
             h1{
-                margin-bottom:16px ;
+                margin-bottom: 16px;
                 font-weight: 500;
                 line-height: 133.5%;
                 margin-bottom: -3px;
+                font-size: rem-calc(24);
     
-                @include lg{
-                    margin-bottom: 24px;
+                @include md{
+                    font-size: rem-calc(44);
                 }
-            }
-            p{
 
             }
+
+            p{
+                line-height: 133.5%;
+                margin-top: 10px;
+
+                @include md {
+                    margin-top: 15px;
+                    padding: 0 10%;
+                }
+
+                @include md{
+                    font-size: rem-calc(28);
+                }
+            }
         }
-        
     }
 }

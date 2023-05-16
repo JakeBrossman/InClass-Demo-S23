@@ -1,35 +1,39 @@
 /* =============
     Base
 ============= */
-.header-footer-grid{
-    display: grid;
-    grid-template-columns: 16px auto 16px;
-    grid-template-areas: ". header-footer  ." ;
-
-    >div{
-        grid-area: header-footer ;
+ul{
+    padding: 0;
+    margin: 0;
+    li{
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 }
-
 
 a{
     text-decoration: none;
 }
-.large-images{
-    width: 100%;
-}
 
-ul{
-    li{
-        list-style: none;
-        padding: none;
-        margin: none;
+.content-spacing{
+    margin-top: 32px;
+
+    @include md{
+        margin-top: 64px;
     }
 }
 
-.content-spacing{
-padding-top: 32px ;
-@include md{
-    padding-top: 64px;
-}
+// .header-footer-grid{
+//     display: grid;
+//     grid-template-columns: 16px auto 16px;
+//     grid-template-areas: ". header-footer .";
+
+//     >div{
+//         grid-area: header-footer;
+//     }
+// }
+
+
+.large-images{
+    width: 100%;
 }

@@ -2,27 +2,48 @@
     Footer
 ============= */
 footer{
- padding: 0 16px;
- >div{
-    display: grid;
-    grid-template-columns: 50% auto;
-    grid-template-areas: 
-    "fl fc"
-    "fl fm";
-    @include md{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "fl fm fc";
-    }
+    padding: 0 16px;
+    padding-bottom: 32px;
+    font-size: rem-calc(12);
 
-    #fl{
-        grid-area: fl ;
+    >div{
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas: 
+        "fl fc"
+        "fl fm";
+
+        @include md{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "fl fm fc";
+        }
+
+        #fl{
+            grid-area: fl;
+            text-align: right;
+        }
+
+        #fc{
+            grid-area: fc;
+            text-align: right;
+            margin-bottom: 8px;
+
+            @include md{
+                margin-bottom: 0;
+            }
+        }
+
+        #fm{
+            grid-area: fm;
+            text-align: right;
+
+            @include md{
+                text-align: center;
+            }
+
+            span{
+                color: var(--purple);
+            }
+        }
     }
-    #fc{
-        grid-area: fc ;
-    }
-    #fm{
-        grid-area: fm ;
-    }
-   
- }
 }
